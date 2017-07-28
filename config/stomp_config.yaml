@@ -18,10 +18,10 @@ stomp/arm_torso:
         cost_weight: 1.0
         kernel_window_percentage: 0.2
         longest_valid_joint_move: 0.05 
-#      - class: stomp_moveit/ObstacleDistanceGradient
-#        max_distance: 0.2
-#        cost_weight: 1.0
-#        longest_valid_joint_move: 0.05 
+      - class: stomp_moveit/DynamicTimeWarping
+        cost_weight: 1.0
+        position_cost_weight: 1.0
+        orientation_cost_weight: 1.0
     noisy_filters:
       - class: stomp_moveit/JointLimits
         lock_start: True
