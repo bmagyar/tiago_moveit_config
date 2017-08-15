@@ -1,5 +1,6 @@
 stomp/arm_torso:
   group_name: arm_torso
+  publish_seed_trajectory: true
   optimization:
     num_timesteps: 50
     num_iterations: 50
