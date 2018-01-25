@@ -16,7 +16,7 @@
     <arg name="robot" value="$(arg robot)" />
   </include>
 
-  <arg name="pipeline" default="stomp"/>
+  <arg name="pipeline" default="ompl"/>
 
   <!-- We do not have a robot connected, so publish fake joint states -->
   <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
