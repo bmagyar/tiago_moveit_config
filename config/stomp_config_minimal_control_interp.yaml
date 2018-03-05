@@ -38,7 +38,7 @@ stomp/arm:
 stomp/arm_torso:
   group_name: arm_torso
   optimization:
-    num_timesteps: 20
+    num_timesteps: 30
     num_iterations: 50
     num_iterations_after_valid: 0
     num_rollouts: 10
@@ -55,9 +55,9 @@ stomp/arm_torso:
         cost_weight: 1.0
         longest_valid_joint_move: 0.05 
     noisy_filters:
-#      - class: stomp_moveit/JointLimits
-#        lock_start: True
-#        lock_goal: True
+      - class: stomp_moveit/JointLimits
+        lock_start: True
+        lock_goal: False
       - class: stomp_moveit/MultiTrajectoryVisualization
         line_width: 0.02
         rgb: [0, 255, 0]

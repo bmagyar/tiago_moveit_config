@@ -48,14 +48,14 @@ stomp/arm_torso:
   optimization:
     num_timesteps: 100
     num_iterations: 50
-    num_iterations_after_valid: 1
+    num_iterations_after_valid: 0
     num_rollouts: 10
     max_rollouts: 100
     control_cost_weight: 0.0
   task:
     noise_generator:
       - class: stomp_moveit/NormalDistributionSampling
-        stddev: [0.1, 0.1, 0.05, 0.05, 0.05, 0.1, 0.1, 0.1] #[0.01, 0.01, 0.1, 0.01, 0.01, 0.01]
+        stddev: [0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01] #[0.01, 0.01, 0.1, 0.01, 0.01, 0.01]
     cost_functions:
       - class: stomp_moveit/CollisionCheck
         collision_penalty: 1.0
@@ -63,13 +63,13 @@ stomp/arm_torso:
         kernel_window_percentage: 0.2
         longest_valid_joint_move: 0.05 
       - class: stomp_moveit/DynamicTimeWarping
-        cost_weight: 1.0
+        cost_weight: 5.0
         position_cost_weight: 0.25
         orientation_cost_weight: 0.125
     noisy_filters:
       - class: stomp_moveit/JointLimits
         lock_start: True
-        lock_goal: True
+        lock_goal: False
       - class: stomp_moveit/MultiTrajectoryVisualization
         line_width: 0.02
         rgb: [0, 255, 0]
