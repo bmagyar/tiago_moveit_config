@@ -14,7 +14,7 @@
   <param name="planning_plugin" value="$(arg planning_plugin)" />
   <param name="request_adapters" value="$(arg planning_adapters)" />
   <param name="start_state_max_bounds_error" value="$(arg start_state_max_bounds_error)" />
-  <rosparam command="load" file="$(find tiago_moveit_config)/config/teb_linear_config.yaml"/>
+  <rosparam command="load" file="$(find tiago_moveit_config)/config/teb_cubic_config.yaml"/>
 
 </launch>
 
